@@ -53,6 +53,11 @@ def ajustar_mapeo(mapeo):
         # Pedir al usuario que ingrese letras para ajustar
         cambiar = input("\n¿Quieres cambiar una letra en el mapeo? (s/n): ").lower()
         if cambiar != 's':
+            # Guardar el diccionario en alfabeto_descifrado.txt
+            with open("alfabeto_descifrado.txt", "w") as file:
+                for k, v in mapeo.items():
+                    file.write(f"{k} -> {v}\n")
+            print("El mapeo final ha sido guardado en alfabeto_descifrado.txt")
             break
         
         letra_cifrada = input("Ingresa la letra cifrada que quieres cambiar: ").upper()
