@@ -1,0 +1,70 @@
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://example.com/rugby#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Shape para :Team obligando a poner un nombre 
+:TeamShape a sh:NodeShape ;
+    sh:targetClass :Team ;
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
+
+# Shape para :Tournament obligandole poner nombre, comienzo y final (fecha) y minimo de equipos que tienen que participar
+:TournamentShape a sh:NodeShape ;
+    sh:targetClass :Tournament ;
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:startDate ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path schema:endDate ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path :hasTeam ;
+        sh:class :Team ;
+        sh:minCount 3 ; #un torneo minimo debe tener mas de 3 equipos
+    ] .
+
+# Shape para :Match obligandole a tener una fecha junto con los dos equipos que juegan y donde participan
+:MatchShape a sh:NodeShape ;
+    sh:targetClass :Match ;
+    sh:property [
+        sh:path schema:date ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path :homeTeam ;
+        sh:class :Team ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path :awayTeam ;
+        sh:class :Team ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path :tournament ;
+        sh:class :Tournament ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .

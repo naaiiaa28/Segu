@@ -1,0 +1,8 @@
+@prefix ns1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/ns#user1> a <http://example.com/ns#User> ; #dato del nodo 4 User conoce a user 
+    ns1:birthDate "1990-05-01"^^xsd:date ;  #Dato del nodo 3
+    ns1:gender ns1:Female ;  #Dato del nodo 2
+    ns1:name "Alice"^^xsd:string . #dato del nodo 1
+

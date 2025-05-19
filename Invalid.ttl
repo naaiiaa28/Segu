@@ -1,0 +1,8 @@
+@prefix ns1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.com/ns#user1> a <http://example.com/ns#User> ;
+    ns1:birthDate "2000-05-01"^^xsd:date ;
+    ns1:gender ns1:unknow ; #Dato que falla devido a que no es ni Male ni Female
+    ns1:name "Ana"^^xsd:string .
+
