@@ -1,0 +1,92 @@
+@prefix ex: <http://example.org/resource/> .  
+@prefix ex_prop: <http://example.org/prop/> .  
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .  
+
+ex:Juan_Perez a ex:Persona ;  
+    rdfs:label "Juan Perez" ;  
+    ex_prop:edad 28 ;  
+    ex_prop:ciudad "Buenos Aires" ;  
+    ex_prop:pais "Argentina" ;  
+    ex_prop:profesion "Ingeniero" ;  
+    ex_prop:salario_anual 75000 .  
+
+ex:Maria_Gomez a ex:Persona ;  
+    rdfs:label "Maria Gomez" ;  
+    ex_prop:edad 34 ;  
+    ex_prop:ciudad "Madrid" ;  
+    ex_prop:pais "España" ;  
+    ex_prop:profesion "Doctora" ;  
+    ex_prop:salario_anual 90000 .  
+
+ex:John_Smith a ex:Persona ;  
+    rdfs:label "John Smith" ;  
+    ex_prop:edad 45 ;  
+    ex_prop:ciudad "Nueva York" ;  
+    ex_prop:pais "EEUU" ;  
+    ex_prop:profesion "Abogado" ;  
+    ex_prop:salario_anual 110000 .  
+
+ex:Lisa_Wong a ex:Persona ;  
+    rdfs:label "Lisa Wong" ;  
+    ex_prop:edad 29 ;  
+    ex_prop:ciudad "Tokio" ;  
+    ex_prop:pais "Japón" ;  
+    ex_prop:profesion "Diseñadora" ;  
+    ex_prop:salario_anual 68000 .  
+
+ex:Carlos_Santos a ex:Persona ;  
+    rdfs:label "Carlos Santos" ;  
+    ex_prop:edad 40 ;  
+    ex_prop:ciudad "Sao Paulo" ;  
+    ex_prop:pais "Brasil" ;  
+    ex_prop:profesion "Arquitecto" ;  
+    ex_prop:salario_anual 82000 .  
+
+ex:Sophie_Dubois a ex:Persona ;  
+    rdfs:label "Sophie Dubois" ;  
+    ex_prop:edad 27 ;  
+    ex_prop:ciudad "Paris" ;  
+    ex_prop:pais "Francia" ;  
+    ex_prop:profesion "Profesora" ;  
+    ex_prop:salario_anual 48000 .  
+
+ex:Ahmed_Khan a ex:Persona ;  
+    rdfs:label "Ahmed Khan" ;  
+    ex_prop:edad 33 ;  
+    ex_prop:ciudad "Dubai" ;  
+    ex_prop:pais "Emiratos Árabes" ;  
+    ex_prop:profesion "Ingeniero" ;  
+    ex_prop:salario_anual 95000 .  
+
+ex:Emma_Johnson a ex:Persona ;  
+    rdfs:label "Emma Johnson" ;  
+    ex_prop:edad 31 ;  
+    ex_prop:ciudad "Londres" ;  
+    ex_prop:pais "Reino Unido" ;  
+    ex_prop:profesion "Marketing" ;  
+    ex_prop:salario_anual 60000 .  
+
+ex:Luis_Garcia a ex:Persona ;  
+    rdfs:label "Luis Garcia" ;  
+    ex_prop:edad 38 ;  
+    ex_prop:ciudad "Mexico DF" ;  
+    ex_prop:pais "México" ;  
+    ex_prop:profesion "Contador" ;  
+    ex_prop:salario_anual 58000 .  
+
+ex:Yuki_Tanaka a ex:Persona ;  
+    rdfs:label "Yuki Tanaka" ;  
+    ex_prop:edad 26 ;  
+    ex_prop:ciudad "Osaka" ;  
+    ex_prop:pais "Japón" ;  
+    ex_prop:profesion "Programadora" ;  
+    ex_prop:salario_anual 72000 .  
+
+ex:Mikel_Aranguren a ex:Persona ;  
+    rdfs:label "Mikel Aranguren" ;  
+    ex_prop:edad 45 ;  
+    ex_prop:ciudad "Bilbo" ;  
+    ex_prop:pais "Euskadi" ;  
+    ex_prop:profesion "Profesor" ;  
+    ex_prop:salario_anual 0 .  
+
