@@ -1,0 +1,16 @@
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?g ?s ?p ?o
+WHERE {
+  ?g dcat:theme "museos" .
+  GRAPH ?g {
+    ?s rdf:type foaf:person .
+    ?s foaf:name "Aitor Labajo" .
+        
+    ?s ?p ?o .
+ 
+  }
+}
+

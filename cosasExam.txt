@@ -1,0 +1,30 @@
+dejar grapdb en segundo plano:
+
+ ./graphdb -d
+ 
+ nohup ./graphdb &
+ 
+ pagina para prefijos:
+ 
+ 	prefix.cc
+ 
+ pagina para hacer shacl rapido:
+ 
+ 	https://shacl.org/playground/
+ 	
+ 
+ instalar graphdb local:
+ 
+sudo apt update
+sudo apt install default-jdk
+sudo apt install unzip
+unzip graphdb-10.8.2-dist.zip 
+cd graphdb-10.8.2-dist/bin/
+./graphdb
+
+ instalar protege local:
+ 
+ tar -xvzf protege-5.6.1.tar.gz
+
+ejecutarlo: direccion de la carpeta descomprimida bash /run.sh
+

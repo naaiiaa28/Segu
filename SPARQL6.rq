@@ -1,0 +1,23 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX gip_prop: <http://gipuzkoa.eus/prop/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?ciudad ?alcalde 
+WHERE {
+	# Buscamos el museo "Gugenheim" y obtenemos la ciudad en la que está ubicado.
+    GRAPH <http://data.abd.ehu.eus/museoak> {
+        ?museo rdf:type <http://dbpedia.org/ontology/museum> .
+        ?museo rdfs:label "Gugenheim"@eu .
+        ?museo gip_prop:kokalekua ?ciudad .
+    }
+    # Indicar que la ciudad obtenida es la misma que la ciudad de Bilbao en DBpedia.
+    ?ciudad owl:sameAs ?bilbaoDBpedia .
+    # Obtenemos el nombre del alcalde de la ciudad donde se encuentra el museo de DBpedia
+    SERVICE <https://dbpedia.org/sparql> {
+    	?bilbaoDBpedia dbp:leaderName ?alcalde .
+    }
+}
+

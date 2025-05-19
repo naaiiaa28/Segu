@@ -1,0 +1,7 @@
+SELECT ?sujeto ?clase ?objeto 
+WHERE { 
+    GRAPH <http://data.abd.ehu.eus/museoak> { 
+        ?sujeto ?clase ?objeto .
+        
+    } 
+} 

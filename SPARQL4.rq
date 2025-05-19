@@ -1,0 +1,16 @@
+##el insert inicial es el siguiente: 
+
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+
+INSERT DATA {
+    <http://data.abd.ehu.eus/museoak> dcat:theme "museos"}
+
+##La consulta es la siguiente: (primero debe ejecutarse el insert por separado)
+
+SELECT DISTINCT ?g
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o
+  }
+}
+

@@ -1,0 +1,20 @@
+PREFIX eus: <https://data.euskadi.eus/resource/>
+PREFIX ehu: <https://ehu.eus/staff/pdi/>
+PREFIX eustat: <urn:eustat:property:>
+PREFIX wikidata: <https://wikidata.org/prop/>
+
+SELECT ?persona ?amigo ?lugar
+WHERE {
+  # Desde el endpoint LOCAL (abd-local) usamos el grafo local para obtener a una persona y el lugar donde vive.
+  GRAPH <urn:local> {
+    ?persona eustat:vive_en ?lugar .
+  }
+
+  # Desde el endpoint REMOTO (abd-remoto) consultamos amigos de esa persona
+  SERVICE <http://35.241.252.244:7200/repositories/abd-remoto> {
+    GRAPH <urn:remoto> {
+      ?persona eustat:amigo_de ?amigo .
+    }
+  }
+}
+
